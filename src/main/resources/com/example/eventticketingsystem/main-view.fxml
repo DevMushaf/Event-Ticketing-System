@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Root container for the UI, VBox arranges elements vertically with center alignment and spacing -->
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.eventticketingsystem.controller.MainController">
+    <!-- Padding around the VBox container to create space between the elements and the edges of the window -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- HBox for horizontal layout of buttons with a 10px spacing between them -->
+    <HBox spacing="10" alignment="CENTER">
+        <!-- Button to start the system, triggers the onStartButtonClick method in the controller -->
+        <Button text="Start" onAction="#onStartButtonClick"/>
+        <!-- Button to stop the system, triggers the onStopButtonClick method in the controller -->
+        <Button text="Stop" onAction="#onStopButtonClick"/>
+        <!-- Button to reset the system, triggers the onResetButtonClick method in the controller -->
+        <Button text="Reset" onAction="#onResetButtonClick"/>
+    </HBox>
+
+    <!-- Label to display the current status of the system, with the initial text 'System Status: Stopped' -->
+    <Label fx:id="statusLabel" text="System Status: Stopped"/>
+
+    <!-- TextArea to display system logs, set to non-editable with word wrapping enabled -->
+    <!-- VBox.vgrow="ALWAYS" makes the TextArea grow to fill available vertical space -->
+    <TextArea fx:id="logArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+</VBox>

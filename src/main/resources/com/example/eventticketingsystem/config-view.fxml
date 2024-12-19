@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Root container for the UI, VBox arranges elements vertically with center alignment and spacing -->
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.eventticketingsystem.controller.ConfigurationController">
+    <!-- Padding around the VBox container to create space between the elements and the edges of the window -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Title label displayed at the top of the screen -->
+    <Label text="System Configuration" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- GridPane for arranging form labels and input fields in a 2-column layout -->
+    <GridPane alignment="CENTER" hgap="10" vgap="10">
+        <!-- Label for Total Tickets and corresponding text field -->
+        <Label text="Total Tickets:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="totalTicketsField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <!-- Label for Ticket Release Rate and corresponding text field -->
+        <Label text="Ticket Release Rate (ms):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="releaseRateField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <!-- Label for Customer Retrieval Rate and corresponding text field -->
+        <Label text="Customer Retrieval Rate (ms):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="retrievalRateField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <!-- Label for Max Ticket Capacity and corresponding text field -->
+        <Label text="Max Ticket Capacity:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="maxCapacityField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+
+    <!-- Button to start the system, triggering the onStartButtonClick method in the controller -->
+    <Button text="Start System" onAction="#onStartButtonClick"/>
+</VBox>
